@@ -1,13 +1,24 @@
-//creation
+//Creation
+
 use <database name>
 db.<table name/collection name>.insertOne({name:"ipsit",dob:2002-02-02,address:"tadepalligudem",phone:"9310686787",email:"ipsit.das1@outlook.com"}); //insertOne takes one object as input and inputs it to the collection
-db.<table name/collection name>.insertMany({name:"ipsit",dob:2002-02-02,address:"tadepalligudem",phone:"9310686787",email:"ipsit.das1@outlook.com"},{name:"ipsit",dob:2002-02-02,address:"tadepalligudem",phone:"9310686787",email:"ipsit.das1@outlook.com"},{name:"ipsit",dob:2002-02-02,address:"tadepalligudem",phone:"9310686787",email:"ipsit.das1@outlook.com"}); //insertOne takes one object as input and inputs it to the collection
+db.<table name/collection name>.insertMany([{name:"ipsit",dob:"2002-02-02",address:"tadepalligudem",phone:"9310686787",email:"ipsit.das1@outlook.com"},{name:"ipsit",dob:"2002-02-02",address:"tadepalligudem",phone:"9310686787",email:"ipsit.das1@outlook.com"},{name:"ipsit",dob:"2002-02-02",address:"tadepalligudem",phone:"9310686787",email:"ipsit.das1@outlook.com"}]); //insertMany takes many objects as array and inputs
 db.<collection name>.find()//to display the collection
 show collections //for showing colections in database
+
+//Read
+
 db.<collection name>.find({key:value}) //for filtering as per the key value pair
 db.<collection name>.find({key:{gte: ref}}) //for filtering as the value greater than ref we can also use 'gt' for strictly greater than can also use 'st' and 'ste' for smaller than
 db.<collection name>.find({key1:{gte: ref1} , key2:{gte: ref2}}) //and operation both filters will be used 
 db.<collection name>.find({$or: [{key1:{gte: ref1} , key2:{gte: ref2}}]}) //or operation any one of the filters will be used 
 db.<collections name>.find({key:value},{key1:1,key2:1}) //will filter out key value pair objects but only show key1 and key2 can also add multiple keys to show
+
+//Updating
+
+
+
+//Deletion
+
 db.<collections name>.deleteOne({key:value}) //will delete first document in the multi document match
 db.<collections name>.deleteMany({key:value}) //will delete all documents in the multi document match
